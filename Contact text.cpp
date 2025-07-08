@@ -58,7 +58,7 @@ int main()
 				printf("输入错误，请重新输入！\n");
 				break;
 		}
-		cin.ignore();//清空缓冲区
+		/*cin.ignore();*///清空缓冲区
 		//system("cls");//清屏
 	} while (a);
 	return 0;

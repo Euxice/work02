@@ -5,11 +5,7 @@ void toshow()
 	printf("%s %s %s %s %s\n", "序号", "姓名", "性别", "电话", "地址");
 }
 
-void Initcon(struct Contact* ps)
-{
-	memset(ps->data, 0, sizeof(ps->data));
-	ps->size = 0;//设置其为0
-}
+
 
 //void addat(struct Contact* ps)
 //{
@@ -111,6 +107,7 @@ void find(const struct Contact* ps)
 {
 	
 	cout <<"请输入查找人姓名"<<endl;
+	/*char name[MAX_NAME];*/
 	string name;
 	cin >> name;
 	if (ps->size == 0)
@@ -125,7 +122,7 @@ void find(const struct Contact* ps)
 				cout << "如下" << endl;
 				toshow();
 				cout << ps->data[i].name << " " << ps->data[i].sex << " " << ps->data[i].tele << " " << ps->data[i].ip << endl;
-				continue;
+				break;
 			}
 			else if (i == ps->size - 1 && ps->data[i].name != name)
 			{
@@ -149,6 +146,7 @@ void modifly(struct Contact* ps)
 	{
 		cout <<"改改谁的"<<endl;
 		string name;
+		/*char name[MAX_NAME];*/
 		cin >> name;
 		for (int i = 0; i < ps->size; i++)
 		{
@@ -165,34 +163,45 @@ void modifly(struct Contact* ps)
 				switch (a)
 				{
 				case 1:
-					cout << "请输入新的名字" << endl;
-					cin >> ps->data[i].name;
 					cin.ignore();
+					cout << "请输入新的名字" << endl;
+					/*cin >> ps->data[i].name;*/
+					cin.getline(ps->data[i].name, MAX_NAME);
+					/*cin.ignore();*/
 					break;
 				case 2:
-					cout << "变性了是吧,改改你的" << endl;
-					cin >> ps->data[i].sex;
 					cin.ignore();
+					cout << "变性了是吧,改改你的" << endl;
+					/*cin >> ps->data[i].sex;*/
+					cin.getline(ps->data[i].sex, MAX_SEX);
+					/*cin.ignore();*/
 					break;
 				case 3:
-					cout << "改变telecommunications（大虚）" << endl;
-					cin >> ps->data[i].tele;
 					cin.ignore();
+					cout << "改变telecommunications（大虚）" << endl;
+					/*cin >> ps->data[i].tele;*/
+					cin.getline(ps->data[i].tele, MAX_TELE);
+					/*cin.ignore();*/
 					break;
 				case 4:
-					cout << "请输入新的ip地址" << endl;
-					cin >> ps->data[i].ip;
 					cin.ignore();
+					cout << "请输入新的ip地址" << endl;
+					/*cin >> ps->data[i].ip;*/
+					cin.getline(ps->data[i].ip, MAX_IP);
+					/*cin.ignore();*/
 					break;
 				}
+				/*cin.ignore();*/
 				cout << "修改成功" << endl;
 				break;
+				
 			}
-			else if (i == ps->size - 1 && ps->data[i].name != name)
+			/*else if ()
 			{
 				cout << "妹找着啊" << endl;
 				break;
-			}
+				
+			}*/
 			/*else
 			{
 				continue;

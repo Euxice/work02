@@ -1,7 +1,7 @@
 //_CRT_SECURE_NO_WARNINGS
 #include<cstdio>
 #include<iostream>
-//#include<string>
+#include<string>
 #include<cstring>
 using namespace std;
 
@@ -25,8 +25,13 @@ struct Contact {//通讯录类型
 	int size;//记录已有个数
 };
 
+inline void Initcon(struct Contact* ps)//初始化通讯录
+{
+	memset(ps->data, 0, sizeof(ps->data));
+	ps->size = 0;
+}
 //声明
-void Initcon(struct Contact* ps);
+//void Initcon(struct Contact* ps);
 void addat(struct Contact* ps);
 void show(struct Contact* ps);
 void find(const struct Contact* ps);
