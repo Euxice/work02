@@ -209,3 +209,28 @@ void modifly(struct Contact* ps)
 		}
 	}
 }
+
+void sort(struct Contact* ps)
+{
+	if (ps->size == 0)
+	{
+		cout << "联系人为空,无法排序" << endl;
+	}
+	else
+	{
+		for (int i = 0; i < ps->size; i++)
+		{
+			for (int j = i; j < ps->size; j++)
+			{
+				if (*ps->data[i].name > *ps->data[j].name)
+				{
+					struct peoinfo temp = ps->data[i];
+					ps->data[i] = ps->data[j];
+					ps->data[j] = temp;
+				}
+			}
+		}
+		cout << "排序成功" << endl;
+		show(ps);
+	}
+}

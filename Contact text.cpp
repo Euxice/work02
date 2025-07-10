@@ -48,7 +48,7 @@ int main()
 				show(&con);
 				break;
 			case 6:
-				//sort(&con);
+				sort(&con);
 				break;
 			case 0:
 				printf("ÍË³ö\n");

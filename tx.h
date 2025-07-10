@@ -11,6 +11,13 @@ using namespace std;
 #define MAX_TELE 20
 #define MAX_IP 16
 
+//enum option {
+//	增，
+//	删，
+//	查，
+//	改
+//};可以做为main中switch的更改选项
+
 struct peoinfo {
 	char name[MAX_NAME];
 	
@@ -37,3 +44,4 @@ void show(struct Contact* ps);
 void find(const struct Contact* ps);
 void delat(struct Contact* ps);
 void modifly(struct Contact* ps);
+void sort(struct Contact* ps);
